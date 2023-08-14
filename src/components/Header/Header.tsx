@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Product } from "../../store/productTypes";
+import { RootState } from "../../store/types";
 
 const Header: React.FC = () => {
-  const cartItems = useSelector((state: any) => state.cart.cartItems);
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems);
   const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   return (
@@ -13,7 +15,7 @@ const Header: React.FC = () => {
           {/* Add your logo here */}
           <h1>E-commerce</h1>
         </div>
-        <nav>
+        <nav> 
           <ul className="flex space-x-4">
             <li>
               <Link to="/">Home</Link>

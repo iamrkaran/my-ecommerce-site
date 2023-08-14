@@ -68,7 +68,7 @@ export type ProductAction =
   | FilterProductsAction;
 
   
-  export interface Book extends Product{
+  export interface CartItem extends Product{
     id: number;
     title: string;
     author: string;

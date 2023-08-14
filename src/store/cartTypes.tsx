@@ -1,7 +1,7 @@
 
-import { Book } from './productTypes';
+import { CartItem } from './productTypes';
 
 export interface CartState {
-  items: Book[];
+  cartItems: CartItem[];
 }
 

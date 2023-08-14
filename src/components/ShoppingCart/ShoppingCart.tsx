@@ -11,7 +11,7 @@ interface CartItem extends Product {
 
 const ShoppingCart: React.FC = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((state: RootState) => state.cart.items);
+  const cart = useSelector((state: RootState) => state.cart.cartItems);
 
   const handleRemoveFromCart = (product: Product) => {
     dispatch(removeFromCart(product));

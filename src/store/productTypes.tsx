@@ -18,6 +18,9 @@ export interface Product {
   sensor?: string; // Optional property
   video_resolution?: string; // Optional property
   quantity: number;
+  pages?: number; // Optional property
+  publisher?: string; // Optional property
+  language?: string; // Optional property
 }
 
 export interface ProductFilter {
@@ -65,7 +68,7 @@ export type ProductAction =
   | FilterProductsAction;
 
   
-  export interface Book {
+  export interface Book extends Product{
     id: number;
     title: string;
     author: string;

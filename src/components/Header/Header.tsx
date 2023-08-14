@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector((state: any) => state.cart.cartItems);
   const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   return (

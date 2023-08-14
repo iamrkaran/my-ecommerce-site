@@ -5,6 +5,10 @@ import { removeFromCart, updateQuantity , checkout } from "../../reducers/cartSl
 import { Product } from "../../store/productTypes";
 import { Link } from "react-router-dom";
 
+interface CartItem extends Product {
+  quantity: number;
+}
+
 const ShoppingCart: React.FC = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.items);
@@ -13,7 +17,7 @@ const ShoppingCart: React.FC = () => {
     dispatch(removeFromCart(product));
   };
 
-  const handleQuantityChange = (product: Product, quantity: number) => {
+  const handleQuantityChange = (product: CartItem, quantity: number) => {
     dispatch(updateQuantity({ ...product, quantity }));
   };
 

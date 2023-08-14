@@ -26,7 +26,7 @@ const Register: React.FC = () => {
       return;
     }
     try {
-      await dispatch(register(name, email, password));
+      await dispatch(register({name, email, password}));
       setFormData({
         name: '',
         email: '',
@@ -42,7 +42,7 @@ const Register: React.FC = () => {
         password,
       };
       localStorage.setItem('user', JSON.stringify(userData));
-    } catch (error) {
+    } catch (error:any) {
       setError(error.message);
     }
   };

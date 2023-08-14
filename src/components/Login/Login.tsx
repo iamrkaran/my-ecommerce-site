@@ -26,7 +26,11 @@ const Login: React.FC = () => {
       return;
     }
     try {
-      await dispatch(login(email, password));
+      await dispatch(login(
+        {
+          email, password
+        }
+      ));
       setFormData({
         email: "",
         password: "",
@@ -40,7 +44,7 @@ const Login: React.FC = () => {
       );
       dispatch({ type: "auth/setIsLoggedIn", payload: true });
       <Navigate to="/" />;
-    } catch (error) {
+    } catch (error: any) {
       setError(error.message);
     }
   };

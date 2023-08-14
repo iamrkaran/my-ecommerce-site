@@ -8,7 +8,7 @@ import products from '../../data/products';
 const ProductDetails: React.FC = () => {
   const dispatch = useDispatch();
   const { id } = useParams<{ id: string }>();
-  const product = products.find(p => p.id === parseInt(id)) as Product;
+  const product = products.find(p => p.id === parseInt(id!)) as Product;
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
